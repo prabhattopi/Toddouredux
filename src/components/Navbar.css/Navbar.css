@@ -1,0 +1,44 @@
+.Nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     margin-top: 10px;
+     font-size: 20px;
+     
+
+}
+.todo{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+}
+.nav{
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    
+}
+.butt{
+   padding: 10px 30px;
+   background: #fff;
+   outline: none;
+   border: 1px solid black;
+   font-size: 18px;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   transition: all 0.4s ease-in-out;
+   -webkit-transition: all 0.4s ease-in-out;
+   -moz-transition: all 0.4s ease-in-out;
+   -ms-transition: all 0.4s ease-in-out;
+   -o-transition: all 0.4s ease-in-out;
+}
+.butt:hover{
+    color: white;
+    background-color: black;
+    
+}
