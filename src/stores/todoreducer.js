@@ -108,7 +108,7 @@ export const todoReducer=(state=initialState,{type,payload})=>{
         case UPDATE_TODO:{
 
             return{...state,
-            data:[...state.data,state.data.map(e=>(e.id==payload.id?e.name=payload.name:e))]
+            data:state.data.map(e=>(e.id==payload.id?{...e,name:payload.name}:e))
             
             }
 

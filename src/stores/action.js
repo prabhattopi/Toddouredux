@@ -42,7 +42,7 @@ export const todoRemove=(id)=>(dispatch)=>{
 export const todoupdate=({id,name})=>(dispatch)=>{
     axios.patch(`http://localhost:8080/Products/${id}`,{name}).then(r=>{
         dispatch({type:UPDATE_TODO,
-            payload:name})
+            payload:r.data})
     })
      
         
