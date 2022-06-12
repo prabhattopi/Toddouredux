@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { getTodods } from "./action";
-import { ADD_TODOS_ERROR, ADD_TODOS_LOADING, ADD_TODOS_SUCCEES, COMPLETE_TODO, DELETE_TODO, GET_TODOS, GET_TODOS_ERROR, GET_TODOS_LOADING, GET_TODOS_SUCCEES, UPDATE_TODO } from "./actiontype";
+import { ADD_TODOS_ERROR, ADD_TODOS_LOADING, ADD_TODOS_SUCCEES, COMPLETE_TODO, DELETE_TODO, GET_TODOS, GET_TODOS_ERROR, GET_TODOS_LOADING, GET_TODOS_SUCCEES, UPDATE_TODO, LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCES, LOGOUT  } from "./actiontype";
 
 
 
-   
+ 
+
+   let data=JSON.parse(localStorage.getItem("tata"))||[]
     const initialState={
         addTod:{
             loading:false,
@@ -16,12 +18,15 @@ import { ADD_TODOS_ERROR, ADD_TODOS_LOADING, ADD_TODOS_SUCCEES, COMPLETE_TODO, D
         error:false,
        
         },
-        data:[]
+        
+        data:data
        
     }
 export const todoReducer=(state=initialState,{type,payload})=>{
     switch(type){
+      
         case GET_TODOS_SUCCEES:{
+            localStorage.setItem("tata",JSON.stringify(payload))
             return{
                 ...state,
             getTod:{
@@ -56,6 +61,8 @@ export const todoReducer=(state=initialState,{type,payload})=>{
         }
         
         case ADD_TODOS_SUCCEES:{
+           
+            localStorage.setItem("tata",JSON.stringify([...state.data,payload]))
             return{
                 ...state,
                 getTod:{
@@ -68,7 +75,10 @@ export const todoReducer=(state=initialState,{type,payload})=>{
                
             },
             data:[...state.data,payload]
+
+            
         }
+    
         }
         case ADD_TODOS_LOADING:{
             return{
@@ -95,6 +105,7 @@ export const todoReducer=(state=initialState,{type,payload})=>{
         
        
         case DELETE_TODO:{
+          
 
             return{...state,
                 

@@ -19,6 +19,9 @@ export const ADD_TODOS_SUCCEES="todo/add/succees/"
 export const  ADD_TODOS_LOADING="todo/add/laoding"
 export const  ADD_TODOS_ERROR="todo/add/laoding"
 
-
+export const LOGIN_LOADING="auth/login/loading"
+export const LOGIN_SUCCES="auth/login/success"
+export const LOGIN_ERROR="auth/login/error"
+export const LOGOUT="auth/logOUT/loading"
 
     
